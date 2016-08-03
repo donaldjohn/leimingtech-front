@@ -432,7 +432,7 @@ border-bottom: 1px solid #D8D8D8;}
 /* 商品名称 */
 
 /* product_read */
-.ncs-goods-summary { float: right; width: 790px; height: 100%;}
+.ncs-goods-summary { float: right; width: 790px; /* height: 100%; */}
 .ncs-goods-summary .name { padding-bottom: 10px;}
 .ncs-goods-summary .name h1, 
 .ncs-goods-summary .name strong { font: 700 16px/1.2em "Microsoft Yahei"; text-overflow: ellipsis; white-space: nowrap; display: block; overflow: hidden;} { font: 700 16px/1.5em "Microsoft Yahei"; text-overflow: ellipsis; white-space: nowrap; display: block; overflow: hidden;}

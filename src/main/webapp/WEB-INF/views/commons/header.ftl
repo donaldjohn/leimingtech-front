@@ -350,7 +350,7 @@
 					<#if goodsList?exists && goodsList?size gt 0>
 						<#list goodsList as class>
 						<#if class.gcshow == 1>
-							<li cat_id="${class.gcId}" class="<#if class_index%2 == 0>odd<#else>even</#if>">
+							<li cat_id="${class.gcId}" level="${class.gcDescLevel}" class="<#if class_index%2 == 0>odd<#else>even</#if>">
 								<div class="class">
 									<span class="ico">
 										<img src="${imgServer}/upload/img/brand/6e9379ae20ae185672d256ef3ec83df4.jpg">
@@ -364,38 +364,120 @@
 									<span class="arrow"></span>
 								</div>
 								<#if class.hasChild gt 0>
-								<#assign firstchild = class.classList>
-								<div class="sub-class" cat_menu_id="${class.gcId}">
-									<#list firstchild as firstclass>
-									<#if firstclass.gcshow==1>
-									<dl>
-			                                <dt>
-			                                	<h3>
-			                                		<a href="${base}/search/goodsSearch?searchType=gcIdSearch&keyword=${firstclass.gcId}" title="${firstclass.gcName}">${firstclass.gcName}</a>
-			                                	</h3>
-			                                </dt>
-		                                <dd class="goods-class">	
-		                                <#if firstclass.hasChild gt 0>
-		                                	<#assign secondchild = firstclass.classList>
-		                                	<#assign secondsize = secondchild?size>
-		                                	<#list secondchild as secondclass>
-		                                		<#if secondclass_index == 0 && secondclass.gcshow==1>
-		                                			<script>
-		                                				var h = "<a href='${base}/search/goodsSearch?searchType=gcIdSearch&keyword=${secondclass.gcId}' title='${secondclass.gcName}'>${secondclass.gcName}</a>";
-		                                				$("#recommend-class-${class.gcId}").append(h);
-		                                			</script>
-		                                		</#if>
-		                                		<#if secondclass.gcshow==1>
-		                                		<a href="${base}/search/goodsSearch?searchType=gcIdSearch&keyword=${secondclass.gcId}" 
-		                                			title="${secondclass.gcName}" <#if secondclass_index+1 == secondsize>style="background:none;"</#if>>${secondclass.gcName}</a>
-		                                		</#if>
-		                                	</#list>
-		                                </#if>
-                                    	</dd>
-                                      </#if>
-		                            </dl>
-		                            </#list>
-								</div>
+									<#assign firstchild = class.classList>
+									<!-- 四级 BEG-->
+									<#if class.gcDescLevel gt 2> 
+										<!-- 四级BEG -->
+											<#assign secondsize2 = firstchild?size>
+											<div class="category2 " cat_menu_id=${class.gcId} style="display: none; position: relative;  left: 210px;  height: 324px;">
+												<ul class="menu2"   style="position: relative; height: 128px;">
+													<#list firstchild as class2>
+														
+														<!-- 自明细-->
+
+															<#if  class2.gcshow==1>
+																<script>
+																	var h = "<a href='${base}/search/goodsSearch?searchType=gcIdSearch&keyword=${class2.gcId}' title='${class2.gcName}'>${class2.gcName}</a>";
+																	$("#recommend-class-${class.gcId}").append(h);
+																</script>
+															</#if>
+															<!--
+															<#if class2.gcshow==1>
+															<a href="${base}/search/goodsSearch?searchType=gcIdSearch&keyword=${class2.gcId}" 
+																title="${class2.gcName}" <#if secondclass_index1+1 == thirdsize>style="background:none;"</#if>>${class2.gcName}</a>
+															</#if>
+															-->
+														<!-- 自明细-->
+													
+														<#if class2.gcshow == 1>
+															<li cat_id="${class2.gcId}" class="<#if class_index%2 == 0>odd<#else>even</#if>">
+																<div class="class">
+																	<span class="ico">
+																		<img src="${imgServer}/upload/img/brand/6e9379ae20ae185672d256ef3ec83df4.jpg">
+																	</span>
+																	<h4>
+																		<a href="${base}/search/goodsSearch?searchType=gcIdSearch&keyword=${class2.gcId}" title="${class2.gcName}">${class2.gcName}</a>
+																	</h4>
+																	<span class="recommend-class" id="recommend-class-${class2.gcId}">
+																		
+																	</span>
+																	<span class="arrow"></span>
+																</div>
+																<#if class2.hasChild gt 0>
+																	<#assign thirdchild = class2.classList>
+																	<div class="sub-class" cat_menu_id="${class2.gcId}">
+																		<#list thirdchild as third>
+																		<#if third.gcshow==1>
+																		<dl>
+																				<dt>
+																					<h3>
+																						<a href="${base}/search/goodsSearch?searchType=gcIdSearch&keyword=${third.gcId}" title="${third.gcName}">${third.gcName}</a>
+																					</h3>
+																				</dt>
+																			<dd class="goods-class">	
+																			<#if third.hasChild gt 0>
+																				<#assign fourthchild = third.classList>
+																				<#assign thirdsize = fourthchild?size>
+																				<#list fourthchild as fourthclass>
+																					<#if fourthclass.gcshow==1>
+																						<script>
+																							var h = "<a href='${base}/search/goodsSearch?searchType=gcIdSearch&keyword=${fourthclass.gcId}' title='${fourthclass.gcName}'>${fourthclass.gcName}</a>";
+																							$("#recommend-class-${class2.gcId}").append(h);
+																						</script>
+																					</#if>
+																					<#if fourthclass.gcshow==1>
+																					<a href="${base}/search/goodsSearch?searchType=gcIdSearch&keyword=${fourthclass.gcId}" 
+																						title="${fourthclass.gcName}" <#if secondclass_index+1 == thirdsize>style="background:none;"</#if>>${fourthclass.gcName}</a>
+																					</#if>
+																				</#list>
+																			</#if>
+																			</dd>
+																		</dl>
+																		</#if>
+																		</#list>
+																	</div>
+																</#if>
+															</li>
+														</#if>
+													</#list>	
+												</ul>
+											</div>
+										<!-- 四级END -->
+									<#else> 
+										<div class="sub-class" cat_menu_id="${class.gcId}">
+											<#list firstchild as firstclass>
+											<#if firstclass.gcshow==1>
+											<dl>
+					                                <dt>
+					                                	<h3>
+					                                		<a href="${base}/search/goodsSearch?searchType=gcIdSearch&keyword=${firstclass.gcId}" title="${firstclass.gcName}">${firstclass.gcName}</a>
+					                                	</h3>
+					                                </dt>
+				                                <dd class="goods-class">	
+				                                <#if firstclass.hasChild gt 0>
+				                                	<#assign secondchild = firstclass.classList>
+				                                	<#assign secondsize = secondchild?size>
+				                                	<#list secondchild as secondclass>
+				                                		<#if secondclass_index == 0 && secondclass.gcshow==1>
+				                                			<script>
+				                                				var h = "<a href='${base}/search/goodsSearch?searchType=gcIdSearch&keyword=${secondclass.gcId}' title='${secondclass.gcName}'>${secondclass.gcName}</a>";
+				                                				$("#recommend-class-${class.gcId}").append(h);
+				                                			</script>
+				                                		</#if>
+				                                		<#if secondclass.gcshow==1>
+				                                		<a href="${base}/search/goodsSearch?searchType=gcIdSearch&keyword=${secondclass.gcId}" 
+				                                			title="${secondclass.gcName}" <#if secondclass_index+1 == secondsize>style="background:none;"</#if>>${secondclass.gcName}</a>
+				                                		</#if>
+				                                	</#list>
+				                                </#if>
+		                                    	</dd>
+		                                      </#if>
+				                            </dl>
+				                            </#list>
+										</div>
+									</#if>
+									<!-- 四级 END-->
+									
 								</#if>
 							</li>
 						</#if>
@@ -553,18 +635,36 @@
                                 var cat_id = $(this).attr("cat_id");
                                 var menu = $(this).find("div[cat_menu_id='" + cat_id + "']");
                                 menu.show();
-                                $(this).addClass("hover");
-                                if (menu.attr("hover") > 0) return;
+                                if (this.getAttribute("level") > 2)
+                                {
+
+                                }
+                                else
+                                {
+                                	$(this).addClass("hover");
+                                }
+                                <!-- if (menu.attr("hover") > 0) return; -->
+                                
                                 menu.masonry({itemSelector: 'dl'});
                                 var menu_height = menu.height();
-                                if (menu_height < 60) menu.height(80);
+                                if (menu_height < 60) menu.height(60);
                                 menu_height = menu.height();
                                 var li_top = $(this).position().top;
                                 if ((li_top > 60) && (menu_height >= li_top)) $(menu).css("top", -li_top + 50);
                                 if ((li_top > 150) && (menu_height >= li_top)) $(menu).css("top", -li_top + 90);
-                                if ((li_top > 240) && (li_top > menu_height)) $(menu).css("top", menu_height - li_top + 90);
+                                if ((li_top > 240) && (li_top > menu_height)) {
+                                	if (menu_height>120){
+                                		$(menu).css("top",60-menu_height);
+                                	}else{
+                                		$(menu).css("top", 0);
+                                	}
+                                }
+                                
                                 if (li_top > 300 && (li_top > menu_height)) $(menu).css("top", 60 - menu_height);
-                                if ((li_top > 40) && (menu_height <= 120)) $(menu).css("top", -5);
+                                if ((li_top > 40) && (menu_height <= 120)) 
+                                	if (menu_height - 60 > 5 )   {                  
+                                		$(menu).css("top", -5);
+                                	}
                                 menu.attr("hover", 1);
                             },
                             function () {

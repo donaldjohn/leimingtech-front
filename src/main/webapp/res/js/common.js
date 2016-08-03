@@ -121,3 +121,29 @@ function trim(str) {
 
 //是否登录标识
 var isLogin = false;
+
+//加载最近浏览的商品
+function load_history_information(){
+    $.getJSON(SITEURL+'/index.php?act=index&op=viewed_info', function(result){
+        var obj = $('.head-user-menu .my-mall');
+        if(result['m_id'] >0){
+            if (typeof result['consult'] !== 'undefined') obj.find('#member_consult').html(result['consult']);
+            if (typeof result['consult'] !== 'undefined') obj.find('#member_voucher').html(result['voucher']);
+        }
+        var goods_id = 0;
+        var text_append = '';
+        var n = 0;
+        if (typeof result['viewed_goods'] !== 'undefined') {
+            for (goods_id in result['viewed_goods']) {
+                var goods = result['viewed_goods'][goods_id];
+                text_append += '<li class="goods-thumb"><a href="'+goods['url']+'" title="'+goods['goods_name']+
+                '" target="_blank"><img src="'+goods['goods_image']+'" alt="'+goods['goods_name']+'"></a>';
+                text_append += '</li>';
+                n++;
+                if (n > 4) break;
+            }
+        }
+        if (text_append == '') text_append = '<li class="no-goods">暂无商品</li>';;
+        obj.find('.browse-history ul').html(text_append);
+    });
+}
