@@ -44,11 +44,13 @@
 	      <li>
 		         <#if recommendGoodslist??>
 	                	<#list recommendGoodslist as recommendGoods >
-	                	   <a href="${base}/product/detail?id=${recommendGoods.goods.goodsId}" target="_blank" style="opacity: 1;"><img style="width: 259px; height: 180px; display: inline;" border="0" class="scrollLoading" src="${imgServer}${recommendGoods.goods.goodsImage}" 
-			                data-url="${imgServer}${recommendGoods.goods.goodsImage}" alt=""></a>
-			                <#if (recommendGoods_index>2)>
-			                    <#break/>
-			                </#if>
+		                	<#if recommendGoods_has_next>
+		                	   <a href="${base}/product/detail?id=${recommendGoods.goods.goodsId}" target="_blank" style="opacity: 1;"><img style="width: 259px; height: 180px; display: inline;" border="0" class="scrollLoading" src="${imgServer}${recommendGoods.goods.goodsImage}" 
+				                data-url="${imgServer}${recommendGoods.goods.goodsImage}" alt=""></a>
+				                <#if (recommendGoods_index>2)>
+				                    <#break/>
+				                </#if>
+				              </#if>  
 	                    </#list>
 	             </#if>
 		  </li>
@@ -205,6 +207,7 @@
             <ul class="specially">
                <#if newGoodslist??>
                	<#list newGoodslist as newGoods >
+               		<#if newGoodslist_has_next > 
                      <li>
 	                    <dl>
 	                        <!--商品名称-->
@@ -223,6 +226,7 @@
 	                        <dd class="goods-price"> 商城价：<em>&yen;${newGoods.goods.goodsStorePrice}</em></dd>
 	                    </dl>
                		  </li>
+               		  </#if>
            		     <#if (newGoods_index>5)>
            			      <#break/>
 		             </#if>
