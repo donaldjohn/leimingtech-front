@@ -175,7 +175,8 @@
 				
 			    $("#imageMenu li img").bind("click", function(){
 					if ($(this).attr("id") != "onlickImg") {
-						midChange($(this).attr("src").replace("small", "mid"));
+						//midChange($(this).attr("src").replace("small", "mid")); 
+						midChange($(this).attr("src").replace("${imageSet.tiny_pic_width}x${imageSet.tiny_pic_height}", "${imageSet.big_pic_width}x${imageSet.big_pic_height}"));
 						$("#imageMenu li").removeAttr("id");
 						$(this).parent().attr("id", "onlickImg");
 					}
@@ -186,12 +187,11 @@
 						$(this).css({ "border": "3px solid #959595" });
 					}
 				}).bind("mouseout", function(){
-					if($(this).attr("id") != "onlickImg"){
-						$(this).removeAttr("style");
-						midChangeHandler = window.setTimeout(function(){
-							midChange($("#onlickImg img").attr("src").replace("small", "mid"));
-						}, 1000);
-					}
+					//if($(this).attr("id") != "onlickImg"){
+					//	 $(this).removeAttr("style");
+					//	midChangeHandler = window.setTimeout(function(){
+					//		midChange($("#onlickImg img").attr("src").replace("small", "mid"));
+					//	}, 1000); 
 				});
 			    function midChange(src) {
 			        $("#midimg").attr("src", src).load(function() {
@@ -222,7 +222,7 @@
 			    var $viewImgWidth = $viewImgHeight = $height = null; //IE加载后才能得到 大图宽度 大图高度 大图视窗高度
 			
 			    function changeViewImg() {
-			        $("#bigView img").attr("src", $("#midimg").attr("src").replace("${imageSet.tiny_pic_width}x${imageSet.tiny_pic_height}", "${imageSet.big_pic_width}x${imageSet.big_pic_height}"));
+			        $("#bigView img").attr("src", "${imgServer}${goods.goodsImage}");
 			    }
 			    changeViewImg();
 			    $("#bigView").scrollLeft(0).scrollTop(0);
