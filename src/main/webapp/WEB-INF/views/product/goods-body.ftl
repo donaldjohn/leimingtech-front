@@ -13,7 +13,7 @@
 		</#if>
 	</ul>
 	<div class="default">${goodsAttr.get("goodsbody")}
-		 <!-- <#if commom_image == "1"> -->
+		 <!-- <#if commom_image == "1"> -->	<!-- </#if> --> 
 			<p>
 				<img src= ${base}/res/images/companycommon/01.jpg  alt="">
 			</p>
@@ -29,6 +29,6 @@
 			<p>
 				<img src=  ${base}/res/images/companycommon/04.jpg alt="">
 			</p>				
-		<!-- </#if> --> 
+	
 	</div>
 </div>
