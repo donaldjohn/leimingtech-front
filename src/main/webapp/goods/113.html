@@ -203,7 +203,12 @@
 				var browser=navigator.appName;
 				var b_version=navigator.appVersion;
 				var version=b_version.split(";"); 
-				var trim_Version=version[1].replace(/[ ]/g,""); 
+				if (version.length > 1)
+				{
+					var trim_Version=version[1].replace(/[ ]/g,""); 
+				}else{
+					var trim_Version=version[0];//此处暂时改成这样，以后需要改
+				}
 				 
 				if(browser=="Microsoft Internet Explorer" && (trim_Version=="MSIE8.0" 
 					|| trim_Version=="MSIE9.0")) { 
@@ -403,6 +408,12 @@
 																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=244" 
 																						title="压板式内径刀杆" >压板式内径刀杆</a>
 																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=245' title='螺钉式内径刀杆'>螺钉式内径刀杆</a>";
+																							$("#recommend-class-192").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=245" 
+																						title="螺钉式内径刀杆" >螺钉式内径刀杆</a>
+																						<script>
 																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=248' title='内径出水孔车刀杆'>内径出水孔车刀杆</a>";
 																							$("#recommend-class-192").append(h);
 																						</script>
@@ -473,7 +484,7 @@
 																		<dl>
 																				<dt>
 																					<h3>
-																						<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=214" title="走心机牙刀杆">走心机牙刀杆</a>
+																						<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=214" title="牙刀杆">牙刀杆</a>
 																					</h3>
 																				</dt>
 																			<dd class="goods-class">	
@@ -726,7 +737,7 @@
 									<!-- 四级 END-->
 									
 							</li>
-							<li cat_id="219" level="0" class="even">
+							<li cat_id="219" level="3" class="even">
 								<div class="class">
 									<span class="ico">
 										<img src="http://192.168.1.88:88//upload/img/brand/6e9379ae20ae185672d256ef3ec83df4.jpg">
@@ -740,52 +751,361 @@
 									<span class="arrow"></span>
 								</div>
 									<!-- 四级 BEG-->
-										<div class="sub-class" cat_menu_id="219">
-											<dl>
-					                                <dt>
-					                                	<h3>
-					                                		<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=229" title="走心机刀粒系列查询">走心机刀粒系列查询</a>
-					                                	</h3>
-					                                </dt>
-				                                <dd class="goods-class">	
-				                                			<script>
-				                                				var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=438' title='切槽刀片'>切槽刀片</a>";
-				                                				$("#recommend-class-219").append(h);
-				                                			</script>
-				                                		<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=438" 
-				                                			title="切槽刀片" >切槽刀片</a>
-				                                		<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=439" 
-				                                			title="切断刀片" >切断刀片</a>
-				                                		<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=440" 
-				                                			title="车牙刀片" >车牙刀片</a>
-				                                		<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=441" 
-				                                			title="扫刀片" >扫刀片</a>
-				                                		<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=442" 
-				                                			title="负角车刀片" >负角车刀片</a>
-				                                		<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=443" 
-				                                			title="正角车刀片" style="background:none;">正角车刀片</a>
-		                                    	</dd>
-				                            </dl>
-											<dl>
-					                                <dt>
-					                                	<h3>
-					                                		<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=230" title="小径镗孔刀查询">小径镗孔刀查询</a>
-					                                	</h3>
-					                                </dt>
-				                                <dd class="goods-class">	
-				                                			<script>
-				                                				var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=444' title='小径槽刀'>小径槽刀</a>";
-				                                				$("#recommend-class-219").append(h);
-				                                			</script>
-				                                		<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=444" 
-				                                			title="小径槽刀" >小径槽刀</a>
-				                                		<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=445" 
-				                                			title="小径镗孔刀" >小径镗孔刀</a>
-				                                		<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=446" 
-				                                			title="小径牙刀" style="background:none;">小径牙刀</a>
-		                                    	</dd>
-				                            </dl>
-										</div>
+										<!-- 四级BEG -->
+											<div class="category2 " cat_menu_id=219 style="display: none; position: relative;  left: 210px;  height: 324px;">
+												<ul class="menu2"   style="position: relative; height: 128px;">
+														
+														<!-- 自明细-->
+
+																<script>
+																	var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=229' title='走心机刀粒系列查询'>走心机刀粒系列查询</a>";
+																	$("#recommend-class-219").append(h);
+																</script>
+															<!--
+															<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=229" 
+																title="走心机刀粒系列查询" >走心机刀粒系列查询</a>
+															-->
+														<!-- 自明细-->
+													
+															<li cat_id="229" class="even">
+																<div class="class">
+																	<span class="ico">
+																		<img src="http://192.168.1.88:88//upload/img/brand/6e9379ae20ae185672d256ef3ec83df4.jpg">
+																	</span>
+																	<h4>
+																		<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=229" title="走心机刀粒系列查询">走心机刀粒系列查询</a>
+																	</h4>
+																	<span class="recommend-class" id="recommend-class-229">
+																		
+																	</span>
+																	<span class="arrow"></span>
+																</div>
+																	<div class="sub-class" cat_menu_id="229">
+																		<dl>
+																				<dt>
+																					<h3>
+																						<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=438" title="切槽刀片">切槽刀片</a>
+																					</h3>
+																				</dt>
+																			<dd class="goods-class">	
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=447' title='走心机切槽刀片'>走心机切槽刀片</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=447" 
+																						title="走心机切槽刀片" >走心机切槽刀片</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=448' title='外槽刀片'>外槽刀片</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=448" 
+																						title="外槽刀片" >外槽刀片</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=449' title='内槽刀片'>内槽刀片</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=449" 
+																						title="内槽刀片" >内槽刀片</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=450' title='端面槽刀片'>端面槽刀片</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=450" 
+																						title="端面槽刀片" >端面槽刀片</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=451' title='非标槽刀片'>非标槽刀片</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=451" 
+																						title="非标槽刀片" >非标槽刀片</a>
+																			</dd>
+																		</dl>
+																		<dl>
+																				<dt>
+																					<h3>
+																						<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=439" title="切断刀片">切断刀片</a>
+																					</h3>
+																				</dt>
+																			<dd class="goods-class">	
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=452' title='走心机切断刀片'>走心机切断刀片</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=452" 
+																						title="走心机切断刀片" >走心机切断刀片</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=453' title='切断刀片'>切断刀片</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=453" 
+																						title="切断刀片" >切断刀片</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=454' title='非标切断刀片'>非标切断刀片</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=454" 
+																						title="非标切断刀片" >非标切断刀片</a>
+																			</dd>
+																		</dl>
+																		<dl>
+																				<dt>
+																					<h3>
+																						<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=440" title="车牙刀片">车牙刀片</a>
+																					</h3>
+																				</dt>
+																			<dd class="goods-class">	
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=455' title='走心机车牙刀片'>走心机车牙刀片</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=455" 
+																						title="走心机车牙刀片" >走心机车牙刀片</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=456' title='外牙刀片'>外牙刀片</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=456" 
+																						title="外牙刀片" >外牙刀片</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=457' title='内牙刀片'>内牙刀片</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=457" 
+																						title="内牙刀片" >内牙刀片</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=458' title='T型牙刀片'>T型牙刀片</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=458" 
+																						title="T型牙刀片" >T型牙刀片</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=459' title='非标牙刀片'>非标牙刀片</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=459" 
+																						title="非标牙刀片" >非标牙刀片</a>
+																			</dd>
+																		</dl>
+																		<dl>
+																				<dt>
+																					<h3>
+																						<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=441" title="扫刀片">扫刀片</a>
+																					</h3>
+																				</dt>
+																			<dd class="goods-class">	
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=460' title='走心机前扫刀片'>走心机前扫刀片</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=460" 
+																						title="走心机前扫刀片" >走心机前扫刀片</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=461' title='走心机后扫刀片'>走心机后扫刀片</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=461" 
+																						title="走心机后扫刀片" >走心机后扫刀片</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=462' title='后扫刀片'>后扫刀片</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=462" 
+																						title="后扫刀片" >后扫刀片</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=463' title='走心机插扫刀片'>走心机插扫刀片</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=463" 
+																						title="走心机插扫刀片" >走心机插扫刀片</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=464' title='非标扫刀片'>非标扫刀片</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=464" 
+																						title="非标扫刀片" >非标扫刀片</a>
+																			</dd>
+																		</dl>
+																		<dl>
+																				<dt>
+																					<h3>
+																						<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=442" title="正角车刀片">正角车刀片</a>
+																					</h3>
+																				</dt>
+																			<dd class="goods-class">	
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=465' title='正角刀粒D型'>正角刀粒D型</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=465" 
+																						title="正角刀粒D型" >正角刀粒D型</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=466' title='正角刀粒C型'>正角刀粒C型</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=466" 
+																						title="正角刀粒C型" >正角刀粒C型</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=467' title='正角刀粒T型'>正角刀粒T型</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=467" 
+																						title="正角刀粒T型" >正角刀粒T型</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=468' title='正角刀粒W型'>正角刀粒W型</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=468" 
+																						title="正角刀粒W型" >正角刀粒W型</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=469' title='正角刀粒V型'>正角刀粒V型</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=469" 
+																						title="正角刀粒V型" >正角刀粒V型</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=470' title='非标车刀片'>非标车刀片</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=470" 
+																						title="非标车刀片" >非标车刀片</a>
+																			</dd>
+																		</dl>
+																		<dl>
+																				<dt>
+																					<h3>
+																						<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=443" title="负角车刀片">负角车刀片</a>
+																					</h3>
+																				</dt>
+																			<dd class="goods-class">	
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=471' title='负角刀粒'>负角刀粒</a>";
+																							$("#recommend-class-229").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=471" 
+																						title="负角刀粒" style="background:none;">负角刀粒</a>
+																			</dd>
+																		</dl>
+																	</div>
+															</li>
+														
+														<!-- 自明细-->
+
+																<script>
+																	var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=230' title='小径镗孔刀查询'>小径镗孔刀查询</a>";
+																	$("#recommend-class-219").append(h);
+																</script>
+															<!--
+															<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=230" 
+																title="小径镗孔刀查询" style="background:none;">小径镗孔刀查询</a>
+															-->
+														<!-- 自明细-->
+													
+															<li cat_id="230" class="even">
+																<div class="class">
+																	<span class="ico">
+																		<img src="http://192.168.1.88:88//upload/img/brand/6e9379ae20ae185672d256ef3ec83df4.jpg">
+																	</span>
+																	<h4>
+																		<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=230" title="小径镗孔刀查询">小径镗孔刀查询</a>
+																	</h4>
+																	<span class="recommend-class" id="recommend-class-230">
+																		
+																	</span>
+																	<span class="arrow"></span>
+																</div>
+																	<div class="sub-class" cat_menu_id="230">
+																		<dl>
+																				<dt>
+																					<h3>
+																						<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=444" title="小径槽刀">小径槽刀</a>
+																					</h3>
+																				</dt>
+																			<dd class="goods-class">	
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=472' title='单头小径内槽刀'>单头小径内槽刀</a>";
+																							$("#recommend-class-230").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=472" 
+																						title="单头小径内槽刀" >单头小径内槽刀</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=473' title='双头小径内槽刀'>双头小径内槽刀</a>";
+																							$("#recommend-class-230").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=473" 
+																						title="双头小径内槽刀" >双头小径内槽刀</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=474' title='单头小径端面槽刀'>单头小径端面槽刀</a>";
+																							$("#recommend-class-230").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=474" 
+																						title="单头小径端面槽刀" >单头小径端面槽刀</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=475' title='双头小径端面槽刀'>双头小径端面槽刀</a>";
+																							$("#recommend-class-230").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=475" 
+																						title="双头小径端面槽刀" >双头小径端面槽刀</a>
+																			</dd>
+																		</dl>
+																		<dl>
+																				<dt>
+																					<h3>
+																						<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=445" title="小径镗孔刀">小径镗孔刀</a>
+																					</h3>
+																				</dt>
+																			<dd class="goods-class">	
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=476' title='斜位镗孔刀'>斜位镗孔刀</a>";
+																							$("#recommend-class-230").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=476" 
+																						title="斜位镗孔刀" >斜位镗孔刀</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=477' title='单头小径镗孔刀'>单头小径镗孔刀</a>";
+																							$("#recommend-class-230").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=477" 
+																						title="单头小径镗孔刀" >单头小径镗孔刀</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=478' title='双头小径镗孔刀'>双头小径镗孔刀</a>";
+																							$("#recommend-class-230").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=478" 
+																						title="双头小径镗孔刀" >双头小径镗孔刀</a>
+																			</dd>
+																		</dl>
+																		<dl>
+																				<dt>
+																					<h3>
+																						<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=446" title="小径牙刀">小径牙刀</a>
+																					</h3>
+																				</dt>
+																			<dd class="goods-class">	
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=479' title='单头小径牙刀'>单头小径牙刀</a>";
+																							$("#recommend-class-230").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=479" 
+																						title="单头小径牙刀" >单头小径牙刀</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=480' title='双头小径牙刀'>双头小径牙刀</a>";
+																							$("#recommend-class-230").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=480" 
+																						title="双头小径牙刀" >双头小径牙刀</a>
+																						<script>
+																							var h = "<a href='http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=481' title='小径T型牙刀'>小径T型牙刀</a>";
+																							$("#recommend-class-230").append(h);
+																						</script>
+																					<a href="http://192.168.1.88:8089/leimingtech-front/search/goodsSearch?searchType=gcIdSearch&keyword=481" 
+																						title="小径T型牙刀" >小径T型牙刀</a>
+																			</dd>
+																		</dl>
+																	</div>
+															</li>
+												</ul>
+											</div>
+										<!-- 四级END -->
 									<!-- 四级 END-->
 									
 							</li>
@@ -1407,7 +1727,8 @@
 				
 			    $("#imageMenu li img").bind("click", function(){
 					if ($(this).attr("id") != "onlickImg") {
-						midChange($(this).attr("src").replace("small", "mid"));
+						midChange($(this).attr("src").replace("small", "mid")); 
+						midChange($(this).attr("src").replace("x", "x"));
 						$("#imageMenu li").removeAttr("id");
 						$(this).parent().attr("id", "onlickImg");
 					}
@@ -1418,16 +1739,16 @@
 						$(this).css({ "border": "3px solid #959595" });
 					}
 				}).bind("mouseout", function(){
-					if($(this).attr("id") != "onlickImg"){
-						$(this).removeAttr("style");
-						midChangeHandler = window.setTimeout(function(){
-							midChange($("#onlickImg img").attr("src").replace("small", "mid"));
-						}, 1000);
-					}
+					//if($(this).attr("id") != "onlickImg"){
+						// $(this).removeAttr("style");
+						//midChangeHandler = window.setTimeout(function(){
+						//	midChange($("#onlickImg img").attr("src").replace("small", "mid"));
+						//}, 1000); 
+					//}
 				});
 			    function midChange(src) {
 			        $("#midimg").attr("src", src).load(function() {
-			            changeViewImg();
+			            changeViewImg2(src.replace("_x.jpg",""));
 			        });
 			    }
 			    //大视窗看图
@@ -1454,9 +1775,14 @@
 			    var $viewImgWidth = $viewImgHeight = $height = null; //IE加载后才能得到 大图宽度 大图高度 大图视窗高度
 			
 			    function changeViewImg() {
-			        $("#bigView img").attr("src", $("#midimg").attr("src").replace("x", "x"));
+			        $("#bigView img").attr("src", "http://192.168.1.88:88//upload/img/store/0/1470970156338.jpg");
 			    }
 			    changeViewImg();
+			    
+			    function changeViewImg2(src) {
+			        $("#bigView img").attr("src", src);
+			    }
+			    
 			    $("#bigView").scrollLeft(0).scrollTop(0);
 			    function fixedPosition(e) {
 			        if (e == null) {
@@ -2308,7 +2634,7 @@ function goodsspec(specs, specQty, defSpec){
 var specs = new Array();
 var source_goods_price = '23';
 var specQty;
-var defSpec = '414';
+var defSpec = '739';
 var goodsspecc;
 
 //异步请求获得sku信息
@@ -2566,7 +2892,7 @@ function buy(type){
     var goodsNum = parseInt($("#quantity").val()); //商品数量
     var specId = $("#goodsSpecId").val(); //商品规格id
     if (typeof(ncspec) == "undefined"){ //若商品没有规格,则将默认规格值存入
-    	specId = 414;
+    	specId = 739;
     }
     if(!isPositiveNum(goodsNum)){
     	layer.msg("请填写正确的购买数量" , {icon:2,time:1000});
@@ -2627,7 +2953,7 @@ function buynow(type){
     var goodsNum = parseInt($("#quantity").val()); //商品数量
     var specId = $("#goodsSpecId").val(); //商品规格id
     if (typeof(ncspec) == "undefined"){ //若商品没有规格,则将默认规格值存入
-    	specId = 414;
+    	specId = 739;
     }
     if(!isPositiveNum(goodsNum)){
     	layer.msg("请填写正确的购买数量" , {icon:2,time:1000});

@@ -12,5 +12,23 @@
 			</#list> 
 		</#if>
 	</ul>
-	<div class="default">${goodsAttr.get("goodsbody")}</div>
+	<div class="default">${goodsAttr.get("goodsbody")}
+		 <!-- <#if commom_image == "1"> -->
+			<p>
+				<img src= ${base}/res/images/companycommon/01.jpg  alt="">
+			</p>
+	
+			<p>
+				<img src= ${base}/res/images/companycommon/02.jpg  alt="">
+			</p>
+			
+			<p>
+				<img src= ${base}/res/images/companycommon/03.jpg alt="">
+			</p>
+			
+			<p>
+				<img src=  ${base}/res/images/companycommon/04.jpg alt="">
+			</p>				
+		<!-- </#if> --> 
+	</div>
 </div>

@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.common.collect.Maps;
+import com.leimingtech.core.common.CommonConstants;
 import com.leimingtech.core.common.Constants;
 import com.leimingtech.core.entity.GoodsClass;
 import com.leimingtech.core.entity.GoodsSpec;
@@ -132,7 +133,7 @@ public class ProductAction {
     @RequestMapping("/goodsBody")
     public ModelAndView goodsBody(Integer goodsId){
     	ModelAndView model = new ModelAndView("/product/goods-body");
-    	
+    	model.addObject("commom_image", CommonConstants.COMMON_IMAGE);
         model.addObject("goodsId", goodsId);
         
     	return model;
