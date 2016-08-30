@@ -444,7 +444,6 @@
 									            	<li class="sp-txt">
 											            	<a href="javascript:void(0)" spId="${key}" spValueId="${goodsSpecMapValues.spValueId}" onClick="selectSpec('${goodsSpecMapValues.spId}', this, '${goodsSpecMapValues.spValueId}')" class="">
 											            	${goodsSpecMapValues.spValueName}
-											            		<#if key==1>
 											            			<#if goodsColImg?? && goodsColImg!''>
 											            				<#list goodsColImg?keys as goodsColImgKey>
 											            					<#if goodsSpecMapValues.spValueId==goodsColImgKey>
@@ -452,7 +451,7 @@
 											            					</#if>
 											            				</#list>
 											            			</#if>
-											            		</#if>
+											            		 
 											            	<i></i>
 										            	   </a>
 									            	</li>
@@ -952,9 +951,15 @@ function selectSpec(num, liObj, SID){
         	$("#goodsSpecId").attr("value", spec.id);
         }
      }
+     if ($(liObj).children().attr("src").indexOf("img") > 0 ){//以。jpg的才有可能是正确的图盘
+     	changeSrcImg($(liObj).children().attr("src"));//改变大图的显示
+     }
 }
 
-
+function changeSrcImg(src) {
+    $("#bigView img").attr("src", src);
+    $("#vertical img").attr("src", src);
+}
 function saveGoodsCookie(){
       //保存商品的cookie信息
 	 var goodsId='${goods.goodsId}';
