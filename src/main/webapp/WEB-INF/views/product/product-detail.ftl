@@ -196,7 +196,7 @@
 				});
 			    function midChange(src) {
 			        $("#midimg").attr("src", src).load(function() {
-			            changeViewImg2(src.replace("_${imageSet.big_pic_width}x${imageSet.big_pic_height}.${(goods.goodsImage?split("."))[goods.goodsImage?split(".")?size-1]}",""));
+			            changeViewImgSrc(src.replace("_${imageSet.big_pic_width}x${imageSet.big_pic_height}.${(goods.goodsImage?split("."))[goods.goodsImage?split(".")?size-1]}",""));
 			        });
 			    }
 			    //大视窗看图
@@ -227,7 +227,7 @@
 			    }
 			    changeViewImg();
 			    
-			    function changeViewImg2(src) {
+			    function changeViewImgSrc(src) {
 			        $("#bigView img").attr("src", src);
 			    }
 			    
@@ -957,8 +957,8 @@ function selectSpec(num, liObj, SID){
 }
 
 function changeSrcImg(src) {
-    $("#bigView img").attr("src", src);
     $("#vertical img").attr("src", src);
+    $("#bigView img").attr("src", src);
 }
 function saveGoodsCookie(){
       //保存商品的cookie信息
