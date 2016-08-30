@@ -196,7 +196,7 @@
 				});
 			    function midChange(src) {
 			        $("#midimg").attr("src", src).load(function() {
-			            changeViewImg2(src.replace("_${imageSet.big_pic_width}x${imageSet.big_pic_height}.${(goods.goodsImage?split("."))[goods.goodsImage?split(".")?size-1]}",""));
+			            changeViewImgSrc(src.replace("_${imageSet.big_pic_width}x${imageSet.big_pic_height}.${(goods.goodsImage?split("."))[goods.goodsImage?split(".")?size-1]}",""));
 			        });
 			    }
 			    //大视窗看图
@@ -227,7 +227,7 @@
 			    }
 			    changeViewImg();
 			    
-			    function changeViewImg2(src) {
+			    function changeViewImgSrc(src) {
 			        $("#bigView img").attr("src", src);
 			    }
 			    
@@ -444,7 +444,6 @@
 									            	<li class="sp-txt">
 											            	<a href="javascript:void(0)" spId="${key}" spValueId="${goodsSpecMapValues.spValueId}" onClick="selectSpec('${goodsSpecMapValues.spId}', this, '${goodsSpecMapValues.spValueId}')" class="">
 											            	${goodsSpecMapValues.spValueName}
-											            		<#if key==1>
 											            			<#if goodsColImg?? && goodsColImg!''>
 											            				<#list goodsColImg?keys as goodsColImgKey>
 											            					<#if goodsSpecMapValues.spValueId==goodsColImgKey>
@@ -452,7 +451,7 @@
 											            					</#if>
 											            				</#list>
 											            			</#if>
-											            		</#if>
+											            		 
 											            	<i></i>
 										            	   </a>
 									            	</li>
@@ -952,9 +951,15 @@ function selectSpec(num, liObj, SID){
         	$("#goodsSpecId").attr("value", spec.id);
         }
      }
+     if ($(liObj).children().attr("src").indexOf("img") > 0 ){//以。jpg的才有可能是正确的图盘
+     	changeSrcImg($(liObj).children().attr("src"));//改变大图的显示
+     }
 }
 
-
+function changeSrcImg(src) {
+    $("#vertical img").attr("src", src);
+    $("#bigView img").attr("src", src);
+}
 function saveGoodsCookie(){
       //保存商品的cookie信息
 	 var goodsId='${goods.goodsId}';
